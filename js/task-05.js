@@ -1,5 +1,4 @@
 'use strict';
-
 let input = document.getElementById('name-input');
 let output = document.getElementById('name-output');
 
