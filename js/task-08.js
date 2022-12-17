@@ -13,5 +13,5 @@ function onSearch(evt) {
     return alert('Усі поля повинні бути заповнені.');
   }
   console.log(`Email: ${email.value}, Password: ${password.value}`);
-  event.currentTarget.reset();
+  evt.currentTarget.reset();
 }

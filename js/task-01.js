@@ -1,11 +1,9 @@
 'use strict';
-const totalCategori = document.querySelectorAll('.item');
-console.log(`Number of ${totalCategori.length} categories:`);
+const list = document.querySelector('#categories').children;
 
-const categoriesArray = [...totalCategori]
-  .map(
-    categories => `Category: ${categories.children[0].textContent}
-Elements: ${categories.children[1].children.length}`
-  )
-  .join('\n');
-console.log(categoriesArray);
+console.log(`Number of ${list.length} categories:`);
+
+[...list].forEach(categories => {
+  console.log(`Category: ${categories.children[0].textContent}`);
+  console.log(`Elements: ${categories.children[1].children.length}`);
+});

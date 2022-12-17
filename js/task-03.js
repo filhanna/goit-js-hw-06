@@ -14,14 +14,14 @@ const images = [
   },
 ];
 
-const createGalleryItem = ({ url, alt }) =>
-  `<li><img src="${url}" alt="${alt}" width = 200 height = 150></li>`;
-const galleryList = images.reduce(
-  (previousValue, item) => previousValue + createGalleryItem(item),
-  ''
-);
-
 const list = document.querySelector('.gallery');
-
-list.insertAdjacentHTML('afterbegin', galleryList);
-list.setAttribute('style', 'list-style-type:none; display:flex; gap:10px');
+images.forEach(image => {
+  let li = document.createElement('li');
+  let img = document.createElement('img');
+  img.src = image.url;
+  img.alt = image.alt;
+  img.style = 'width:500px ; height:300px';
+  li.appendChild(img);
+  list.appendChild(li);
+});
+list.style = 'list-style-type:none; display:flex; gap:10px';
