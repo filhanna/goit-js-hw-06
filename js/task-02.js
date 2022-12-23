@@ -1,8 +1,11 @@
 'use strict';
 const ingredients = ['Potatoes', 'Mushrooms', 'Garlic', 'Tomatos', 'Herbs', 'Condiments'];
 const list = document.querySelector('#ingredients');
-let html = '';
-ingredients.forEach(ingredient => {
-  html += `<li class="item">${ingredient}</li>`;
+const foodIngredients = ingredients.map(ingredient => {
+  let items = document.createElement('li');
+  items.classList.toggle('item');
+  items.textContent = ingredient;
+  return items;
 });
-list.innerHTML = html;
+list.append(...foodIngredients);
+console.log(list);
